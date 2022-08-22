@@ -1,19 +1,16 @@
 import { getRandomInt } from "./getRandomInt";
 import { getRandomPunct } from "./getRandomPunct";
 import { getRandomStr } from "./getRandomStr";
+import { IPwdOptions } from "./interfaces";
 import { pwdSorter } from "./pwdSorter";
 
-export const pwdGenerator = (
-  len = 10,
-  strLength = 5,
-  upperCase = false,
-  numLength = 5,
-  punctLength = 0
-): string => {
-  const str = getRandomStr(strLength, upperCase);
-  const nums = getRandomInt(numLength);
-  const punct = getRandomPunct(punctLength);
-  const pwd = pwdSorter(str + punct + nums, len);
+export const pwdGenerator = (params: IPwdOptions): string => {
+  const str = params.strInclude
+    ? getRandomStr(params.range, params.upperCase)
+    : "";
+  const nums = params.numsInclude ? getRandomInt(params.range) : "";
+  const punct = params.punctInclude ? getRandomPunct(params.range) : "";
+  const pwd = pwdSorter(str + punct + nums, params.range);
 
   return pwd;
 };

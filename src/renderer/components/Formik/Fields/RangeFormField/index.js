@@ -1,4 +1,3 @@
-import Slider from "calcite-react/Slider";
 import classNames from "classnames";
 import { Field, useField } from "formik";
 import "./styles.scss";
@@ -9,7 +8,6 @@ const RangeFormField = (props) => {
     name,
     id,
     type,
-    value,
     min,
     max,
     label,

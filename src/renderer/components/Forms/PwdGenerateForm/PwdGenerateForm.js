@@ -1,26 +1,32 @@
 import { Form, useField } from "formik";
 import { Fragment } from "react";
 import FormButton from "../../Buttons/FormButton";
-import { RangeFormField, SwitchFormField } from "../../Formik/Fields";
-import { pwdGenerateFormFields } from "./pwdGenerateFormFields";
+import {
+  CopyFormField,
+  RangeFormField,
+  SwitchFormField,
+} from "../../Formik/Fields";
+import {
+  pwdGenerateFormFields,
+  pwdGenerateRangeField,
+} from "./pwdGenerateFormFields";
 import "./styles.scss";
 
-const renderPwdGenerateFormFields = (props) => {
-  const [field] = useField(props[0].name);
+const renderPwdGenerateRange = ({ show, ...fieldProps }) => (
+  <RangeFormField key={fieldProps.id} {...fieldProps} />
+);
 
-  return (
-    <Fragment key={props[0].id + props[1].id}>
-      <SwitchFormField key={props[0].id} {...props[0]} />
-      {field.value && <RangeFormField key={props[1].id} {...props[1]} />}
-    </Fragment>
-  );
-};
+const renderPwdGenerateFormFields = (props) => (
+  <SwitchFormField key={props.id} {...props} />
+);
 
-const PwdGenerateForm = ({ values }) => {
+const PwdGenerateForm = ({ pwd }) => {
   return (
     <Form className="pwd-generate-form" id="pwd-generate-form">
-      {pwdGenerateFormFields({ values }).map(renderPwdGenerateFormFields)}
+      {renderPwdGenerateRange(pwdGenerateRangeField)}
+      {pwdGenerateFormFields().map(renderPwdGenerateFormFields)}
       <FormButton type="submit" text="Generate" />
+      <CopyFormField key="copy" value={pwd} />
     </Form>
   );
 };

@@ -1,57 +1,34 @@
 export const pwdGenerateFormFields = () => [
-  [
-    {
-      id: "strInclude",
-      name: "strInclude",
-      value: true,
-      type: "checkbox",
-      placeholder: "Include alphabetic characters",
-      show: true,
-    },
-    {
-      id: "strLength",
-      name: "strLength",
-      value: 5,
-      min: 1,
-      max: 20,
-      type: "range",
-      show: true,
-    },
-  ],
-  [
-    {
-      id: "numsInclude",
-      name: "numsInclude",
-      type: "checkbox",
-      placeholder: "Include numeric characters",
-      show: true,
-    },
-    {
-      id: "numsLength",
-      name: "numsLength",
-      value: 5,
-      min: 1,
-      max: 20,
-      type: "range",
-      show: true,
-    },
-  ],
-  [
-    {
-      id: "punctInclude",
-      name: "punctInclude",
-      type: "checkbox",
-      placeholder: "Include punctuation characters",
-      show: true,
-    },
-    {
-      id: "punctLength",
-      name: "punctLength",
-      value: 5,
-      min: 1,
-      max: 20,
-      type: "range",
-      show: true,
-    },
-  ],
+  {
+    id: "strInclude",
+    name: "strInclude",
+    type: "checkbox",
+    label: "Include alphabetic characters",
+    show: true,
+  },
+  {
+    id: "numsInclude",
+    name: "numsInclude",
+    type: "checkbox",
+    label: "Include numeric characters",
+    show: true,
+  },
+  {
+    id: "punctInclude",
+    name: "punctInclude",
+    type: "checkbox",
+    label: "Include punctuation characters",
+    show: true,
+  },
 ];
+
+export const pwdGenerateRangeField = {
+  id: "range",
+  name: "range",
+  value: 10,
+  min: 2,
+  max: 50,
+  type: "range",
+  label: "Password length",
+  show: true,
+};

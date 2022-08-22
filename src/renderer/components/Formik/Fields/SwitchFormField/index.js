@@ -8,7 +8,6 @@ const SwitchFormField = (props) => {
     name,
     id,
     type,
-    value,
     label,
     customContainerClassName,
     customFieldClassName,

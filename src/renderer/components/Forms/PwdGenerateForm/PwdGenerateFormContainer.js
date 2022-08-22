@@ -1,24 +1,31 @@
 import { Formik } from "formik";
+import { useState } from "react";
+import { pwdGenerator } from "src/main";
 import PwdGenerateForm from "./PwdGenerateForm";
 
 const PwdGenerateFormContainer = ({
   initialValues = {
     range: 10,
     strInclude: true,
-    strLength: 5,
+    upperCase: true,
     numsInclude: true,
-    numsLength: 5,
     punctInclude: false,
-    punctLength: 0,
   },
 }) => {
+  const [pwd, setPwd] = useState("");
+
+  const handleSubmit = (form) => {
+    const a = pwdGenerator(form);
+    navigator.clipboard.writeText(a);
+    setPwd(a);
+  };
   return (
     <Formik
       enableReinitialize
       initialValues={initialValues}
-      onSubmit={(form) => console.log(form)}
+      onSubmit={(form) => handleSubmit(form)}
     >
-      {({ values }) => <PwdGenerateForm values={values} />}
+      {() => <PwdGenerateForm pwd={pwd} />}
     </Formik>
   );
 };

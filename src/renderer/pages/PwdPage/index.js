@@ -4,13 +4,6 @@ import PwdGenerateFormContainer from "../../components/Forms/PwdGenerateForm/Pwd
 import "./styles.scss";
 
 const PwdPage = () => {
-  const [range, setRange] = useState(10);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-    const form = new FormData(e.target);
-    console.log(form);
-  };
   return (
     <section>
       <Header />
