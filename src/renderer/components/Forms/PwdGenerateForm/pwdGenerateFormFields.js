@@ -7,6 +7,13 @@ export const pwdGenerateFormFields = () => [
     show: true,
   },
   {
+    id: "upperCase",
+    name: "upperCase",
+    type: "checkbox",
+    label: "Include uppercase alphabetic characters",
+    show: true,
+  },
+  {
     id: "numsInclude",
     name: "numsInclude",
     type: "checkbox",
