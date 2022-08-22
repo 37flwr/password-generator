@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import { Field, useField } from "formik";
+import { Field } from "formik";
+import CopyButton from "src/renderer/components/Buttons/CopyButton";
 import "./styles.scss";
 
 const CopyFormField = (props) => {
@@ -19,6 +20,7 @@ const CopyFormField = (props) => {
         className="copy-field"
         readOnly
       />
+      <CopyButton value={value} />
       <span className="range-form-value">{value}</span>
     </div>
   );
