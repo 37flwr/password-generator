@@ -1,0 +1,19 @@
+.form-button {
+  all: unset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  height: 40px;
+
+  background-color: #0e86d4;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
+}
