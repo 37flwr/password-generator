@@ -23,6 +23,11 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "import/no-unresolved": "off",
+        "react/prop-types": "off"
+    },
+    "settings": {
+        "import/no-unresolved": "off"
     }
 }
