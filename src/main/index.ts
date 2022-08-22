@@ -3,18 +3,17 @@ import { getRandomPunct } from "./getRandomPunct";
 import { getRandomStr } from "./getRandomStr";
 import { pwdSorter } from "./pwdSorter";
 
-function password_generator(
-  len: number = 10,
-  strLength: number = 5,
-  numLength: number = 5,
-  punctLength: number = 0
-): string {
-  let pwd = "";
-  const str = getRandomStr(strLength);
+export const pwdGenerator = (
+  len = 10,
+  strLength = 5,
+  upperCase = false,
+  numLength = 5,
+  punctLength = 0
+): string => {
+  const str = getRandomStr(strLength, upperCase);
   const nums = getRandomInt(numLength);
   const punct = getRandomPunct(punctLength);
-  pwd = pwdSorter(str + punct + nums, len);
-  return pwd;
-}
+  const pwd = pwdSorter(str + punct + nums, len);
 
-console.log(password_generator());
+  return pwd;
+};
