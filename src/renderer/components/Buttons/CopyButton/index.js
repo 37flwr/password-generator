@@ -1,9 +1,10 @@
+import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import Check from "./Check";
 import Clippy from "./Clippy";
 import "./styles.scss";
 
-const CopyButton = ({ value }) => {
+const CopyButton = ({ value, customClassName }) => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const CopyButton = ({ value }) => {
   return (
     <button
       disabled={!value || copied}
-      className="copy-btn"
+      className={classNames("copy-btn", customClassName)}
       onClick={clickHandler}
       type="button"
     >

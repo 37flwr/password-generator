@@ -18,12 +18,15 @@ const RangeFormField = (props) => {
 
   return (
     <div className={classNames("range-form-field", customContainerClassName)}>
-      <label
-        className={classNames("range-field-label", customFieldClassName)}
-        htmlFor={id}
-      >
-        {label}
-      </label>
+      <div className="range-form-field-data">
+        <label
+          className={classNames("range-field-label", customFieldClassName)}
+          htmlFor={id}
+        >
+          {label}:
+        </label>
+        <span className="range-form-value">{field.value}</span>
+      </div>
       <Field
         name={name}
         id={id}
@@ -34,7 +37,6 @@ const RangeFormField = (props) => {
         type={type}
         className="range-field"
       />
-      <span className="range-form-value">{field.value}</span>
     </div>
   );
 };

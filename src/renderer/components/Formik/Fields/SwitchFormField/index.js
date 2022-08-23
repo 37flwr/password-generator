@@ -1,5 +1,4 @@
 import { useField } from "formik";
-import "./styles.scss";
 import SwitchFormFieldComponent from "./SwitchFormFieldComponent";
 
 const SwitchFormField = (props) => {

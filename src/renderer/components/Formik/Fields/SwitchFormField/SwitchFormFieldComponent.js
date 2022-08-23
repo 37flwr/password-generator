@@ -15,17 +15,20 @@ const SwitchFormFieldComponent = (props) => {
   } = props;
   return (
     <div
-      className={classNames("radio-input-container", customContainerClassName)}
+      className={classNames("toggle-input-container", customContainerClassName)}
     >
-      <Field
-        name={name}
-        id={id}
-        {...(component && { component })}
-        type={type}
-        className="radio-field"
-      />
+      <div className="toggle-control">
+        <Field
+          name={name}
+          id={id}
+          {...(component && { component })}
+          type={type}
+          className="toggle-field"
+        />
+        <label htmlFor={id} className="control" />
+      </div>
       <label
-        className={classNames("radio-label", customFieldClassName)}
+        className={classNames("toggle-label", customFieldClassName)}
         htmlFor={id}
       >
         {label}

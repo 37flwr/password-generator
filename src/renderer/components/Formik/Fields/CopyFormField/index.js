@@ -4,24 +4,28 @@ import CopyButton from "src/renderer/components/Buttons/CopyButton";
 import "./styles.scss";
 
 const CopyFormField = (props) => {
-  const { component, name, id, type, label, value } = props;
+  const { component, id, type, label, value } = props;
 
   return (
-    <div className={classNames("range-form-field")}>
-      <label className={classNames("range-field-label")} htmlFor={id}>
-        {label}
+    <div className={classNames("copy-form-field")}>
+      <label
+        className={classNames("copy-field-label")}
+        htmlFor="copy-form-field"
+      >
+        Your password
       </label>
-      <Field
-        name="copy-form-field"
-        id="copy-form-field"
-        {...(component && { component })}
-        value={value}
-        type="text"
-        className="copy-field"
-        readOnly
-      />
-      <CopyButton value={value} />
-      <span className="range-form-value">{value}</span>
+      <div className="copy-field-container">
+        <Field
+          name="copy-form-field"
+          id="copy-form-field"
+          {...(component && { component })}
+          value={value}
+          type="text"
+          className="copy-field"
+          readOnly
+        />
+        <CopyButton customClassName="copy-field-btn" value={value} />
+      </div>
     </div>
   );
 };

@@ -23,7 +23,9 @@ const PwdGenerateForm = ({ pwd }) => {
   return (
     <Form className="pwd-generate-form" id="pwd-generate-form">
       {renderPwdGenerateRange(pwdGenerateRangeField)}
-      {pwdGenerateFormFields().map(renderPwdGenerateFormFields)}
+      <div className="pwd-generate-form-params">
+        {pwdGenerateFormFields().map(renderPwdGenerateFormFields)}
+      </div>
       <FormButton type="submit" text="Generate" />
       <CopyFormField key="copy" value={pwd} />
     </Form>
