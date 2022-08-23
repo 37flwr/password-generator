@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import { pwdGenerator } from "src/main";
+import getValidationSchema from "./formValidationSchema";
 import PwdGenerateForm from "./PwdGenerateForm";
 
 const PwdGenerateFormContainer = ({
@@ -19,10 +20,12 @@ const PwdGenerateFormContainer = ({
     navigator.clipboard.writeText(a);
     setPwd(a);
   };
+
   return (
     <Formik
       enableReinitialize
       initialValues={initialValues}
+      validationSchema={getValidationSchema}
       onSubmit={(form) => handleSubmit(form)}
     >
       {() => <PwdGenerateForm pwd={pwd} />}

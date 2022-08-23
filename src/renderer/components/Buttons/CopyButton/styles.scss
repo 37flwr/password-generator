@@ -1,0 +1,33 @@
+.copy-btn {
+  appearance: "none";
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  position: "relative";
+  height: 16;
+  width: 16;
+  padding: 8;
+
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .check {
+    color: green;
+    position: "absolute";
+    top: 0;
+    left: 0;
+  }
+
+  .clippy {
+    color: "#000";
+    position: "absolute";
+    top: 0;
+    left: 0;
+  }
+}

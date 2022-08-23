@@ -1,18 +1,32 @@
-import React, { useState } from "react";
-import CopyIcon from "../../../assets/CopyIcon.png";
+import React, { useEffect, useState } from "react";
+import Check from "./Check";
+import Clippy from "./Clippy";
 import "./styles.scss";
 
 const CopyButton = ({ value }) => {
-  const [btnStatus, setBtnStatus] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      copied && setCopied(false);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  }, [copied]);
 
   const clickHandler = () => {
     navigator.clipboard.writeText(value);
-    setBtnStatus((currStatus) => !currStatus);
+    setCopied(true);
   };
 
   return (
-    <button type="button" className="copy-button" onClick={clickHandler}>
-      {btnStatus ? <div>1</div> : <img src={CopyIcon} />}
+    <button
+      disabled={!value || copied}
+      className="copy-btn"
+      onClick={clickHandler}
+      type="button"
+    >
+      {copied ? <Check className="check" /> : <Clippy className="clippy" />}
     </button>
   );
 };
