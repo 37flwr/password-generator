@@ -5,6 +5,7 @@ import {
   RangeFormField,
   SwitchFormField,
 } from "../../Formik/Fields";
+import Modal from "../../Modal";
 import {
   pwdGenerateFormFields,
   pwdGenerateRangeField,
@@ -19,7 +20,7 @@ const renderPwdGenerateFormFields = (props) => (
   <SwitchFormField key={props.id} {...props} />
 );
 
-const PwdGenerateForm = ({ pwd }) => {
+const PwdGenerateForm = ({ pwd, modal, setModal }) => {
   return (
     <Form className="pwd-generate-form" id="pwd-generate-form">
       {renderPwdGenerateRange(pwdGenerateRangeField)}
@@ -27,7 +28,12 @@ const PwdGenerateForm = ({ pwd }) => {
         {pwdGenerateFormFields().map(renderPwdGenerateFormFields)}
       </div>
       <FormButton type="submit" text="Generate" />
-      <CopyFormField key="copy" value={pwd} />
+      {modal && (
+        <Modal setModal={setModal}>
+          <CopyFormField key="copy" value={pwd} />
+          <FormButton type="submit" text="Refresh" />
+        </Modal>
+      )}
     </Form>
   );
 };

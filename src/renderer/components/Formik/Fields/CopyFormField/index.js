@@ -4,7 +4,7 @@ import CopyButton from "src/renderer/components/Buttons/CopyButton";
 import "./styles.scss";
 
 const CopyFormField = (props) => {
-  const { component, id, type, label, value } = props;
+  const { component, value } = props;
 
   return (
     <div className={classNames("copy-form-field")}>

@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import { pwdGenerator } from "src/main";
-import getValidationSchema from "./formValidationSchema";
 import PwdGenerateForm from "./PwdGenerateForm";
 
 const PwdGenerateFormContainer = ({
@@ -14,21 +13,22 @@ const PwdGenerateFormContainer = ({
   },
 }) => {
   const [pwd, setPwd] = useState("");
+  const [modal, setModal] = useState(false);
 
   const handleSubmit = (form) => {
-    const a = pwdGenerator(form);
-    navigator.clipboard.writeText(a);
-    setPwd(a);
+    const generatedPwd = pwdGenerator(form);
+    setModal(true);
+    // navigator.clipboard.writeText(generatedPwd);
+    setPwd(generatedPwd);
   };
 
   return (
     <Formik
       enableReinitialize
       initialValues={initialValues}
-      validationSchema={getValidationSchema}
       onSubmit={(form) => handleSubmit(form)}
     >
-      {() => <PwdGenerateForm pwd={pwd} />}
+      {() => <PwdGenerateForm pwd={pwd} modal={modal} setModal={setModal} />}
     </Formik>
   );
 };
