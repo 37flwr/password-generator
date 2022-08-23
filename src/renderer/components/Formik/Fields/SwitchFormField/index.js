@@ -1,35 +1,15 @@
-import classNames from "classnames";
-import { Field } from "formik";
+import { useField } from "formik";
 import "./styles.scss";
+import SwitchFormFieldComponent from "./SwitchFormFieldComponent";
 
 const SwitchFormField = (props) => {
-  const {
-    component,
-    name,
-    id,
-    type,
-    label,
-    customContainerClassName,
-    customFieldClassName,
-  } = props;
-  return (
-    <div
-      className={classNames("radio-input-container", customContainerClassName)}
-    >
-      <Field
-        name={name}
-        id={id}
-        {...(component && { component })}
-        type={type}
-        className="radio-field"
-      />
-      <label
-        className={classNames("radio-label", customFieldClassName)}
-        htmlFor={id}
-      >
-        {label}
-      </label>
-    </div>
+  const { relation } = props;
+  const relativeStatus = relation && useField(relation);
+
+  return relativeStatus ? (
+    relativeStatus[0].value && <SwitchFormFieldComponent {...props} />
+  ) : (
+    <SwitchFormFieldComponent {...props} />
   );
 };
 

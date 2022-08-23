@@ -1,9 +1,4 @@
-import {
-  lowerCaseAlph,
-  numeric,
-  punctuation,
-  upperCaseAlph,
-} from "./enums/pwdStrings.enum";
+import { lowerCaseAlph, numeric, punctuation, upperCaseAlph } from "./enums";
 import { getRandomChars } from "./getRamndomChars";
 import { IPwdOptions } from "./interfaces";
 import { pwdSorter } from "./pwdSorter";

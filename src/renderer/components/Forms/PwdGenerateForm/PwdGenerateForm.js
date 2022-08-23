@@ -1,5 +1,4 @@
-import { Form, useField } from "formik";
-import { Fragment } from "react";
+import { Form } from "formik";
 import FormButton from "../../Buttons/FormButton";
 import {
   CopyFormField,
@@ -12,7 +11,7 @@ import {
 } from "./pwdGenerateFormFields";
 import "./styles.scss";
 
-const renderPwdGenerateRange = ({ show, ...fieldProps }) => (
+const renderPwdGenerateRange = ({ ...fieldProps }) => (
   <RangeFormField key={fieldProps.id} {...fieldProps} />
 );
 
