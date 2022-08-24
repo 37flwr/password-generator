@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Field, useField } from "formik";
+import SecurityBar from "../../../SecurityBar";
 import "./styles.scss";
 
 const RangeFormField = (props) => {
@@ -37,6 +38,9 @@ const RangeFormField = (props) => {
         type={type}
         className="range-field"
       />
+      <div className="range-form-field-security">
+        <SecurityBar value={field.value} />
+      </div>
     </div>
   );
 };

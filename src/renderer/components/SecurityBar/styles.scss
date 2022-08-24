@@ -1,0 +1,25 @@
+.security-bar {
+  height: 5px;
+  width: 100%;
+
+  .security-bar-inner {
+    height: 100%;
+    border-radius: 5px;
+  }
+  .sec {
+    &-low {
+      width: 25%;
+      background-color: red;
+    }
+
+    &-medium {
+      width: 50%;
+      background-color: orange;
+    }
+
+    &-high {
+      width: 100%;
+      background-color: green;
+    }
+  }
+}

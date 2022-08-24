@@ -35,7 +35,7 @@ export const pwdGenerateRangeField = {
   name: "range",
   value: 10,
   min: 2,
-  max: 50,
+  max: 30,
   type: "range",
   label: "Password length",
   show: true,
