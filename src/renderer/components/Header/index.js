@@ -1,8 +1,6 @@
 import React from "react";
 import "./styles.scss";
 
-const Header = () => {
-  return <section className="header">PwdGenerator</section>;
-};
+const Header = () => <section className="header">PwdGenerator</section>;
 
 export default Header;

@@ -8,7 +8,6 @@ const PwdPage = () => {
     <section>
       <Header />
       <section className="pwd-page">
-        <h1>Password Generator</h1>
         <PwdGenerateFormContainer />
       </section>
     </section>

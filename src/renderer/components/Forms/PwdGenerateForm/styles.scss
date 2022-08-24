@@ -9,4 +9,10 @@
     flex-direction: column;
     gap: 5px;
   }
+
+  .modal-btns-container {
+    width: 325px;
+    display: flex;
+    justify-content: space-between;
+  }
 }

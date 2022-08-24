@@ -31,7 +31,10 @@ const PwdGenerateForm = ({ pwd, modal, setModal }) => {
       {modal && (
         <Modal setModal={setModal}>
           <CopyFormField key="copy" value={pwd} />
-          <FormButton type="submit" text="Refresh" />
+          <div className="modal-btns-container">
+            <FormButton type="submit" text="Refresh" />
+            <FormButton text="Change params" onClick={() => setModal(false)} />
+          </div>
         </Modal>
       )}
     </Form>

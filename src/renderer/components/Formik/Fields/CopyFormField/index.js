@@ -12,7 +12,7 @@ const CopyFormField = (props) => {
         className={classNames("copy-field-label")}
         htmlFor="copy-form-field"
       >
-        Your password
+        Your generated password
       </label>
       <div className="copy-field-container">
         <Field
